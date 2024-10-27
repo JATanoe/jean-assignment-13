@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="/css/styles.css">
+		<title>Create Account</title>
+	</head>
+	<body>
+		<div class="page">
+			<nav>
+				<a href="/users">Home</a>
+				<a href="/register">Register</a>
+			</nav>
+
+			<h1>Users</h1>
+
+			<form action="" method="post" th:object="${user}" class="form">
+				<div>
+					<label for="username">Username:</label>
+					<input id="username" type="text" th:field="*{username}" />
+				</div>
+
+				<div>
+					<label for="password">Password:</label>
+					<input id="password" type="password" th:field="*{password}" />
+				</div>
+
+				<div>
+					<label for="name">Full Name:</label>
+					<input id="name" type="text" th:field="*{name}" />
+				</div>
+
+				<hr/>
+
+				<div>
+					<label for="addressLine1">Address Line 1:</label>
+					<input id="addressLine1" type="text" th:field="*{address.addressLine1}" />
+				</div>
+
+				<div>
+					<label for="addressLine2">Address Line 2:</label>
+					<input id="addressLine2" type="text" th:field="*{address.addressLine2}" />
+				</div>
+
+				<div>
+					<label for="city">City:</label>
+					<input id="city" type="text" th:field="*{address.city}" />
+				</div>
+
+				<div>
+					<label for="region">Region:</label>
+					<input id="region" type="text" th:field="*{address.region}" />
+				</div>
+
+				<div>
+					<label for="country">Country:</label>
+					<input id="country" type="text" th:field="*{address.country}" />
+				</div>
+
+				<div>
+					<label for="zipCode">Zip Code:</label>
+					<input id="zipCode" type="text" th:field="*{address.zipCode}" />
+				</div>
+
+				<input type="submit" value="Create User Account" />
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="/css/styles.css">
+        <title>User's Account</title>
+    </head>
+<body>
+	<div class="page">
+		<nav class="page__nav nav">
+			<a class="nav__link" href="/users">Home</a>
+			<a class="nav__link" href="/register">Register</a>
+		</nav>
+
+		<h1 th:text="${account.accountName}">Account Name</h1>
+
+		<form
+			th:action="@{/users/{userId}/accounts/{accountId}(userId=${user.userId}, accountId=${account.accountId})}"
+			th:object="${account}"
+			method="post"
+			class="form"
+		>
+			<div>
+				<label for="name">Account Name:</label>
+				<input id="name" type="text" th:field="*{accountName}" />
+			</div>
+
+			<input type="submit" value="Save Account" />
+		</form>
+
+		<p><a th:href="@{/users/{userId}(userId=${user.userId})}">Back</a></p>
+	</div>
+</body>
+</html>

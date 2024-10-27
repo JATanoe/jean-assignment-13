@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body, button, input {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    display: grid;
+    place-items: start center;
+}
+
+.page {
+    width: 100%;
+    max-width: 36rem;  /* 1024px */
+    padding-block: 1rem 3rem;
+}
+
+.page__list {
+    padding-block: 1rem;
+    border-bottom: 1px solid #020617;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-block-end: .5rem;
+    border-bottom: 1px solid #020617;
+}
+
+nav a {
+    color: #020617;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    margin-block: 1rem 2rem;
+}
+
+h2 {
+    margin-block-end: 1rem;
+}
+
+form div {
+    display: flex;
+    align-items: baseline;
+}
+
+label {
+    font-weight: 500;
+    flex-basis: 32%;
+    padding-block: .4rem;
+}
+
+input {
+    width: 100%;
+    padding-block: .4rem;
+    padding-inline: .8rem;
+    border: 1px solid #020617;
+    border-radius: 2px;
+    outline: none;
+    margin-block-end: 1rem;
+}
+
+form input[type=submit] {
+    margin-block-start: 0;
+}
+
+input[type=submit] {
+    margin-block-start: 1rem;
+}
+
+input[type=submit]:hover {
+    background-color: #020617;
+    color: #FFF;
+}
+
+hr {
+    margin-block: 0 1rem;
+    border: none;
+    border-bottom: 1px solid #020617;
+}
+
+section {
+    margin-block-end: 1rem;
+}
