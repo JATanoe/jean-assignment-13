@@ -1,14 +1,10 @@
 package com.coderscampus.web;
 
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 import java.util.Set;
 
-import ch.qos.logback.core.model.Model;
 import com.coderscampus.domain.Account;
 import com.coderscampus.domain.User;
-import com.coderscampus.repository.AccountRepository;
 import com.coderscampus.service.AccountService;
 import com.coderscampus.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +13,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-//@RequestMapping("/users")
 public class UserController {
 	
 	private final UserService userService;
@@ -36,7 +30,6 @@ public class UserController {
 	public String getCreateUser (ModelMap model) {
 		model.put("user", new User());
 		model.addAttribute("user", new User());
-//		return "users/create";
 		return "register";
 	}
 	
@@ -57,7 +50,6 @@ public class UserController {
 			model.addAttribute("user", users.iterator().next());
 		}
 		model.addAttribute("users", users);
-//		return "users/index";
 		return "users";
 	}
 	

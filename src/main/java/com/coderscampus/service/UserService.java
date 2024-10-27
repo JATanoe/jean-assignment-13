@@ -60,14 +60,11 @@ public class UserService {
 	}
 
 	public User saveUser(User user) {
-		// if we are creating a new user
 		if (user.getUserId() == null) {
-			// Create new address
 			Address address = user.getAddress();
 			user.setAddress(address);
 			address.setUser(user);
 
-			// Create new account
 			Account checking = new Account();
 			checking.setAccountName("Checking Account");
 			checking.getUsers().add(user);
