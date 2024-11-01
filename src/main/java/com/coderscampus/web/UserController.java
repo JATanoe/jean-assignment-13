@@ -1,5 +1,8 @@
 package com.coderscampus.web;
 
+import java.util.Collections;
+import java.util.Set;
+
 import com.coderscampus.domain.Account;
 import com.coderscampus.domain.User;
 import com.coderscampus.service.AccountService;
@@ -11,12 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.Collections;
-import java.util.Set;
-
 @Controller
 public class UserController {
-
+	
 	private final UserService userService;
 	private final AccountService accountService;
 
@@ -25,21 +25,21 @@ public class UserController {
 		this.userService = userService;
 		this.accountService = accountService;
 	}
-
+	
 	@GetMapping("/register")
 	public String getCreateUser (ModelMap model) {
 		model.put("user", new User());
 		model.addAttribute("user", new User());
 		return "register";
 	}
-
+	
 	@PostMapping("/register")
 	public String postCreateUser (User user) {
 		System.out.println(user);
 		userService.saveUser(user);
 		return "redirect:/users";
 	}
-
+	
 	@GetMapping("/users")
 	public String getAllUsers (ModelMap model) {
 		Set<User> users = userService.findAll();
@@ -52,7 +52,7 @@ public class UserController {
 		model.addAttribute("users", users);
 		return "users";
 	}
-
+	
 	@GetMapping("/users/{userId}")
 	public String getOneUser (ModelMap model, @PathVariable Long userId) {
 		User user = userService.findById(userId);
@@ -83,14 +83,14 @@ public class UserController {
 	}
 
 	@GetMapping("/users/{userId}/accounts/{accountId}")
-	public String getOneAccount(@PathVariable Long userId, @PathVariable Long accountId, ModelMap model) {
-		User user = userService.findById(userId);
-		Account account = accountService.findById(accountId);
+    public String getOneAccount(@PathVariable Long userId, @PathVariable Long accountId, ModelMap model) {
+        User user = userService.findById(userId);
+        Account account = accountService.findById(accountId);
 		userService.saveAccount(user, account);
-		model.addAttribute("account", account);
-		model.addAttribute("user", user);
-		return "account";
-	}
+        model.addAttribute("account", account);
+        model.addAttribute("user", user);
+        return "account";
+    }
 
 	@PostMapping("/users/{userId}/accounts/{accountId}")
 	public String postUpdateAccount (Account account, User user) {
