@@ -29,6 +29,15 @@ body {
     place-items: start center;
 }
 
+a {
+    color: #020617;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .page {
     width: 100%;
     max-width: 36rem;  /* 1024px */
@@ -46,15 +55,6 @@ nav {
     gap: 1rem;
     padding-block-end: .5rem;
     border-bottom: 1px solid #020617;
-}
-
-nav a {
-    color: #020617;
-    text-decoration: none;
-}
-
-nav a:hover {
-    text-decoration: underline;
 }
 
 h1 {
